@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         色抓自抓種
+// @name         色花自抓種
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
