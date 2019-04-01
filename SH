@@ -25,3 +25,9 @@
 })();
 
 document.querySelector("[id*='aid']").href
+var popup = window.open("下載網址");
+popup.blur();
+window.focus();
+
+下載完
+popup.close();
