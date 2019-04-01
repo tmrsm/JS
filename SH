@@ -19,5 +19,7 @@
     'use strict';
     if (document.querySelector("[id*='aid']"))
         {document.querySelector("[id*='aid']").click();
+         window.open('', '_self', '').close();
         }
+
 })();
