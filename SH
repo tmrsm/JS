@@ -9,16 +9,11 @@
 // @run-at         document-end
 // ==/UserScript==
 
-var popup = window.open(document.querySelector("[id*='aid']").href);
-popup.blur();
-window.focus();
-
 (function() {
     'use strict';
 console.log(document.querySelector("[id*='aid']").href)
     if (document.querySelector("[id*='aid']"))
         {document.querySelector("[id*='aid']").click();
-         //window.open('', '_self', '').close();
-popup.close();
+         window.open('', '_self', '').close();
         }
 })();
