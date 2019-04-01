@@ -8,26 +8,17 @@
 // @grant        none
 // @run-at         document-end
 // ==/UserScript==
-//window.open('https://tixcraft.com')
-//alert(document.getElementsByName('yt0').parentNode);
-//alert(document.querySelector('input[name="yt0"]').value);
-//alert(window.location.href.match('https://tixcraft.com/activity/game/'))
 
-
-
-(function() {
-    'use strict';
-    if (document.querySelector("[id*='aid']"))
-        {document.querySelector("[id*='aid']").click();
-         window.open('', '_self', '').close();
-        }
-
-})();
-
-document.querySelector("[id*='aid']").href
-var popup = window.open("下載網址");
+var popup = window.open(document.querySelector("[id*='aid']").href);
 popup.blur();
 window.focus();
 
-下載完
+(function() {
+    'use strict';
+console.log(document.querySelector("[id*='aid']").href)
+    if (document.querySelector("[id*='aid']"))
+        {document.querySelector("[id*='aid']").click();
+         //window.open('', '_self', '').close();
 popup.close();
+        }
+})();
