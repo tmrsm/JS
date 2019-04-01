@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://sehuatang.com/*
+// @match        https://www.sehuatang.org/*
 // @grant        none
 // @run-at         document-end
 // ==/UserScript==
@@ -13,9 +13,11 @@
 //alert(document.querySelector('input[name="yt0"]').value);
 //alert(window.location.href.match('https://tixcraft.com/activity/game/'))
 
+
+
 (function() {
     'use strict';
-    //若按鈕出現=點擊，沒出現重整網頁
-    if (document.querySelector("[id*='attchment']")) {
-            document.querySelector("[id*='attchment']").click();
-        }})
+    if (document.querySelector("[id*='aid']"))
+        {document.querySelector("[id*='aid']").click();
+        }
+})();
