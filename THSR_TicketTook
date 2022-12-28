@@ -1,0 +1,69 @@
+// ==UserScript==
+// @name         THSR_TicketTook
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://irs.thsrc.com.tw/IMINT/*
+// @grant        none
+// ==/UserScript==
+
+//人數
+var ppl = 1;
+var kid = 0;
+//去程車次
+var toNum = '583';
+//回程車次                        !!!!!!!有回程需修改以下車次!!!!!!
+var backNum = '822';
+//去程日期
+var toDate = '2020/01/11';
+//是否要來回票(yes/no)             !!!!!!有回程以下修改yes!!!!!!!!!
+var backCheck = 'yes';
+//回程日期
+var backDate = '2020/01/12';
+//身分證字號
+var id = 'F127500738';
+//手機
+var phone = '0925605717';
+
+if(document.querySelector('select[name="selectStartStation"]')){
+    //新竹
+    document.querySelector('select[name="selectStartStation"]').value=5;
+    //左營
+    document.querySelector('select[name="selectDestinationStation"]').value=12;
+//商務車廂打勾
+//    document.querySelector('#BookingS1Form_trainCon_trainRadioGroup :nth-child(3)').click();
+    //車次打勾
+    document.querySelector('#bookingMethod_1').click();
+    //來回票
+    if(backCheck == 'yes'){
+        document.querySelector('#returnCheckBox').click();
+        //4/8 back
+        document.querySelector('#backTimeInputField').value=backDate;
+        document.querySelector('input[name="backTrainIDInputField"]').value = backNum;
+    }
+    //4/4 to
+    document.querySelector('#toTimeInputField').value=toDate;
+    //to train
+    document.querySelector('input[name="toTrainIDInputField"]').value = toNum;
+    document.querySelector('select[name="ticketPanel:rows:0:ticketAmount"]').value = ppl+"F";
+    document.querySelector('select[name="ticketPanel:rows:1:ticketAmount"]').value = kid+"H";
+    //focus on captcha
+    document.querySelector('input[name="homeCaptcha:securityCode"]').focus();
+}
+
+if(document.querySelector('input[name="agree"]')){
+    document.querySelector('#idNumber').value = id;
+    //手機
+    document.querySelector('#mobileInputRadio').click();
+    document.querySelector('#mobilePhone').value = phone;
+    //會員
+    document.querySelector('#memberSystemCheckBox').click();
+    document.querySelector('#memberShipCheckBox').click();
+    //同意條款
+    document.querySelector('input[name="agree"]').click();
+    //完成訂位
+    document.querySelector('#isSubmit').click();
+    //會員最後確認
+    document.querySelector('#btn-custom2').click();
+}
